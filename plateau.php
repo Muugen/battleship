@@ -5,6 +5,9 @@ echo PHP_EOL;
 //le tableau de jeu
 function display_board($user_tab, $bot_tab)
 {
+    echo "   ---------------------------------------------------\n";
+    echo "                    Baitaille Navale \n";
+    echo "   |-------------------------------------------------|\n";
     echo "   | A B C D E F G H I J |  /  | A B C D E F G H I J |";
     echo PHP_EOL;
     echo "   |---------------------|  /  |---------------------|";
@@ -45,7 +48,9 @@ function display_board($user_tab, $bot_tab)
         echo " |";
         echo PHP_EOL;
     }
-    echo "   |-------------------------------------------------|";
+    echo "   |-------------------------------------------------|\n";
+    echo "   ---------------------------------------------------\n\n";
+
 }
 //affichage des 100 cases 
 function makearray($y){
@@ -55,7 +60,21 @@ function makearray($y){
     }
     return $inputcase;
 }
-$user=makearray(0);
-$bot=makearray(0);
+$user=makearray(1);
+$bot=makearray(1);
 display_board($user,$bot);
+
+echo "  veuillez entrez les coordonné de vos vaisseau :\n";
+echo "          --- un porte_avion de 5 cases ---\n";
+echo "          --- un croiseur de 4 cases ---\n";
+echo "          --- un contre_torpilleur de 3 cases ---\n";
+echo "          --- un sous_marin de 3 cases ---\n";
+echo "          --- un torpilleur de 2 cases ---\n";
+$porte_avion = "PAPAP";
+$croiseur = "CCCC";
+$contre_torpilleur = "CTC";
+$sous_marin = "SMM";
+$torpilleur = "TT";
+
+$UserInput = trim(fgets(STDIN));
 ?>
