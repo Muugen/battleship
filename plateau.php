@@ -5,9 +5,9 @@ echo "battleship";
 echo PHP_EOL;
 function display_board($user_tab, $bot_tab)
 {
-    echo "|A B C D E F G H I J K|  /  |A'B'C'D'E'F'G'H'I'J'K'|";
+    echo "   | A B C D E F G H I J |  /  | A B C D E F G H I J |";
     echo PHP_EOL;
-    echo "|-----------------------|  /  |-----------------------|";
+    echo "   |---------------------|  /  |---------------------|";
     echo PHP_EOL;
     /*$array_user = array_values($user_tab);
     $array_bot = array_values($bot_tab);*/
@@ -32,22 +32,22 @@ function display_board($user_tab, $bot_tab)
             
         }
 
-        echo "|  /  |";
+        echo " |  /  |";
         for ($j = 0; $j < 10; $j++)
         {
             if ($bot_tab[10*($i-1) + $j] == 0)
             {
-                echo "--";
+                echo "  ";
             }
             else{
-                echo "-*";
+                echo " *";
             }
             
         }
-        echo "|";
+        echo " |";
         echo PHP_EOL;
     }
-    echo " -----------------------------------------------------|";
+    echo "   |-------------------------------------------------|";
 }
 function makearray($y){
     $inputU = new SplFixedArray(100);
@@ -57,6 +57,6 @@ function makearray($y){
     return $inputU;
 }
 $a=makearray(0);
-$b=makearray(1);
+$b=makearray(0);
 display_board($a,$b);
 ?>
