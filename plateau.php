@@ -1,16 +1,14 @@
 <?php
 $tab = ['1' => ' A ' ,'2' =>' B ','3'=>' C ','4'=>' D ','5'=>' E ','6'=>' F ','7'=>' G ','8'=>' H ','9'=>' I ','10'=>' J ','11'=>' K '];
-//echo $tab['1'].$tab['2'].$tab['3'].$tab['4'];
-echo "battleship";
+echo "battleship game";
 echo PHP_EOL;
+//le tableau de jeu
 function display_board($user_tab, $bot_tab)
 {
     echo "   | A B C D E F G H I J |  /  | A B C D E F G H I J |";
     echo PHP_EOL;
     echo "   |---------------------|  /  |---------------------|";
     echo PHP_EOL;
-    /*$array_user = array_values($user_tab);
-    $array_bot = array_values($bot_tab);*/
     for($i = 1; $i < 11; $i++){
         if ($i < 10){
             echo "  ";
@@ -49,14 +47,15 @@ function display_board($user_tab, $bot_tab)
     }
     echo "   |-------------------------------------------------|";
 }
+//affichage des 100 cases 
 function makearray($y){
-    $inputU = new SplFixedArray(100);
+    $inputcase = new SplFixedArray(100);
     for($i=0;$i<100;$i++){
-        $inputU[$i]=$y;
+        $inputcase[$i]=$y;
     }
-    return $inputU;
+    return $inputcase;
 }
-$a=makearray(0);
-$b=makearray(0);
-display_board($a,$b);
+$user=makearray(0);
+$bot=makearray(0);
+display_board($user,$bot);
 ?>
